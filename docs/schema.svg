@@ -1,0 +1,476 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2330" viewBox="0 0 2800 2330">
+<rect x="0" y="0" width="2800" height="2330" fill="#ffffff"/>
+<text x="60" y="70.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="40" text-anchor="start" fill="#212121" font-weight="bold" >AirGlove — схема электрическая соединений (макет)</text>
+<text x="60" y="112.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="21" text-anchor="start" fill="#555" font-weight="normal" >Нарисована по реальным модулям: ESP32-C3 SuperMini, TCA9548A, 6× GY-BNO055 (CJMCU-055), TP4056 Type-C с защитой, MT3608</text>
+<rect x="2060" y="40" width="690" height="150" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="1.5" />
+<polyline points="2085,75 2145,75" fill="none" stroke="#e53935" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2160" y="82.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#212121" font-weight="normal" >3V3</text>
+<polyline points="2425,75 2485,75" fill="none" stroke="#212121" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2500" y="82.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#212121" font-weight="normal" >GND</text>
+<polyline points="2085,117 2145,117" fill="none" stroke="#1e88e5" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2160" y="124.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#212121" font-weight="normal" >SDA</text>
+<polyline points="2425,117 2485,117" fill="none" stroke="#7a5a00" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="2425,117 2485,117" fill="none" stroke="#f4b400" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2500" y="124.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#212121" font-weight="normal" >SCL</text>
+<polyline points="2085,159 2145,159" fill="none" stroke="#fb8c00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2160" y="166.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#212121" font-weight="normal" >5V (MT3608 → ESP)</text>
+<polyline points="2425,159 2485,159" fill="none" stroke="#8e0000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2500" y="166.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#212121" font-weight="normal" >АКБ / после TP4056</text>
+<rect x="300" y="330" width="240" height="430" rx="14" fill="#1b1b1b" stroke="#000" stroke-width="2" />
+<rect x="380" y="308" width="80" height="46" rx="8" fill="#b0b0b0" stroke="#555" stroke-width="2" />
+<text x="420" y="296.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" fill="#333" font-weight="normal" >USB-C: прошивка и отладка</text>
+<text x="420.0" y="425.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#fff" font-weight="bold" >ESP32-C3</text>
+<text x="420.0" y="452.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#ddd" font-weight="normal" >SuperMini</text>
+<rect x="370" y="710" width="100" height="30" rx="4" fill="#3a3a3a" stroke="#777" stroke-width="1.5" />
+<text x="420.0" y="731.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#ccc" font-weight="normal" >антенна</text>
+<text x="420.0" y="792.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" fill="#212121" font-weight="bold" >A1 — ESP32-C3 SuperMini</text>
+<circle cx="300" cy="410" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="416.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >5V</text>
+<circle cx="300" cy="450" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="456.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >G</text>
+<circle cx="300" cy="490" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="496.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >3.3</text>
+<circle cx="300" cy="530" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="536.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >4</text>
+<circle cx="300" cy="570" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="576.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >3</text>
+<circle cx="300" cy="610" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="616.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >2</text>
+<circle cx="300" cy="650" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="656.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >1</text>
+<circle cx="300" cy="690" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="316" y="696.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >0</text>
+<circle cx="540" cy="410" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="416.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >5</text>
+<circle cx="540" cy="450" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="456.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >6</text>
+<circle cx="540" cy="490" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="496.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >7</text>
+<circle cx="540" cy="530" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="536.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >8</text>
+<circle cx="540" cy="570" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="576.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >9</text>
+<circle cx="540" cy="610" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="616.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >10</text>
+<circle cx="540" cy="650" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="656.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >20</text>
+<circle cx="540" cy="690" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="524" y="696.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >21</text>
+<rect x="900" y="330" width="260" height="750" rx="12" fill="#1f4fa0" stroke="#000" stroke-width="2" />
+<text x="1030.0" y="375.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#fff" font-weight="bold" >TCA9548A</text>
+<text x="1030.0" y="400.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#dfe8ff" font-weight="normal" >I²C-мультиплексор</text>
+<text x="1030.0" y="1112.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" fill="#212121" font-weight="bold" >A2 — TCA9548A, адрес 0x70</text>
+<circle cx="900" cy="440" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="446.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >VIN</text>
+<circle cx="900" cy="480" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="486.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >GND</text>
+<circle cx="900" cy="520" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="526.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >SDA</text>
+<circle cx="900" cy="560" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="566.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#fff" font-weight="normal" >SCL</text>
+<circle cx="900" cy="600" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="606.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >RST</text>
+<line x1="900" y1="600" x2="878" y2="600" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="594" x2="884" y2="606" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="606" x2="884" y2="594" stroke="#9e9e9e" stroke-width="2"/>
+<circle cx="900" cy="640" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="646.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >A0</text>
+<line x1="900" y1="640" x2="878" y2="640" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="634" x2="884" y2="646" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="646" x2="884" y2="634" stroke="#9e9e9e" stroke-width="2"/>
+<circle cx="900" cy="680" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="686.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >A1</text>
+<line x1="900" y1="680" x2="878" y2="680" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="674" x2="884" y2="686" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="686" x2="884" y2="674" stroke="#9e9e9e" stroke-width="2"/>
+<circle cx="900" cy="720" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="916" y="726.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#bdbdbd" font-weight="normal" >A2</text>
+<line x1="900" y1="720" x2="878" y2="720" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="714" x2="884" y2="726" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="872" y1="726" x2="884" y2="714" stroke="#9e9e9e" stroke-width="2"/>
+<circle cx="1160" cy="440" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="446.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SD0</text>
+<circle cx="1160" cy="480" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="486.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SC0</text>
+<circle cx="1160" cy="520" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="526.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SD1</text>
+<circle cx="1160" cy="560" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="566.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SC1</text>
+<circle cx="1160" cy="600" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="606.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SD2</text>
+<circle cx="1160" cy="640" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="646.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SC2</text>
+<circle cx="1160" cy="680" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="686.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SD3</text>
+<circle cx="1160" cy="720" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="726.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SC3</text>
+<circle cx="1160" cy="760" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="766.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SD4</text>
+<circle cx="1160" cy="800" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="806.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SC4</text>
+<circle cx="1160" cy="840" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="846.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SD5</text>
+<circle cx="1160" cy="880" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="886.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#fff" font-weight="normal" >SC5</text>
+<circle cx="1160" cy="920" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="926.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >SD6</text>
+<line x1="1160" y1="920" x2="1182" y2="920" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="914" x2="1188" y2="926" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="926" x2="1188" y2="914" stroke="#9e9e9e" stroke-width="2"/>
+<circle cx="1160" cy="960" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="966.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >SC6</text>
+<line x1="1160" y1="960" x2="1182" y2="960" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="954" x2="1188" y2="966" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="966" x2="1188" y2="954" stroke="#9e9e9e" stroke-width="2"/>
+<circle cx="1160" cy="1000" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="1006.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >SD7</text>
+<line x1="1160" y1="1000" x2="1182" y2="1000" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="994" x2="1188" y2="1006" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="1006" x2="1188" y2="994" stroke="#9e9e9e" stroke-width="2"/>
+<circle cx="1160" cy="1040" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="1144" y="1046.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="end" fill="#bdbdbd" font-weight="normal" >SC7</text>
+<line x1="1160" y1="1040" x2="1182" y2="1040" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="1034" x2="1188" y2="1046" stroke="#9e9e9e" stroke-width="2"/>
+<line x1="1176" y1="1046" x2="1188" y2="1034" stroke="#9e9e9e" stroke-width="2"/>
+<text x="930" y="966.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#b9c8ee" font-weight="normal" >каналы 6–7:</text>
+<text x="930" y="986.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#b9c8ee" font-weight="normal" >резерв</text>
+<rect x="2250" y="300" width="400" height="225" rx="12" fill="#5e2b97" stroke="#000" stroke-width="2" />
+<circle cx="2250" cy="325" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="331.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VCC</text>
+<circle cx="2250" cy="345" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="351.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >GND</text>
+<circle cx="2250" cy="365" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="371.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >ATX = SDA</text>
+<circle cx="2250" cy="385" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="391.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >LRX = SCL</text>
+<circle cx="2250" cy="405" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="411.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >I2C</text>
+<circle cx="2250" cy="425" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="431.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >INT</text>
+<circle cx="2250" cy="445" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="451.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >RES</text>
+<circle cx="2250" cy="465" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="471.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >BOOT</text>
+<text x="2420" y="334.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="26" text-anchor="start" fill="#fff" font-weight="bold" >ch0</text>
+<text x="2420" y="362.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="17" text-anchor="start" fill="#fff" font-weight="normal" >ладонь (тыл кисти)</text>
+<text x="2420" y="390.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#fff" font-weight="bold" >GY-BNO055</text>
+<text x="2420" y="420.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >адрес 0x28 / 0x29</text>
+<text x="2420" y="437.5" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >S0, S1 → GND (I²C)</text>
+<text x="2420" y="455.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >I2C, INT, RES, BOOT — NC</text>
+<text x="2664" y="330.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#212121" font-weight="bold" >U1</text>
+<rect x="2250" y="550" width="400" height="225" rx="12" fill="#5e2b97" stroke="#000" stroke-width="2" />
+<circle cx="2250" cy="575" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="581.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VCC</text>
+<circle cx="2250" cy="595" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="601.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >GND</text>
+<circle cx="2250" cy="615" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="621.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >ATX = SDA</text>
+<circle cx="2250" cy="635" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="641.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >LRX = SCL</text>
+<circle cx="2250" cy="655" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="661.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >I2C</text>
+<circle cx="2250" cy="675" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="681.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >INT</text>
+<circle cx="2250" cy="695" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="701.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >RES</text>
+<circle cx="2250" cy="715" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="721.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >BOOT</text>
+<text x="2420" y="584.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="26" text-anchor="start" fill="#fff" font-weight="bold" >ch1</text>
+<text x="2420" y="612.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="17" text-anchor="start" fill="#fff" font-weight="normal" >большой палец</text>
+<text x="2420" y="640.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#fff" font-weight="bold" >GY-BNO055</text>
+<text x="2420" y="670.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >адрес 0x28 / 0x29</text>
+<text x="2420" y="687.5" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >S0, S1 → GND (I²C)</text>
+<text x="2420" y="705.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >I2C, INT, RES, BOOT — NC</text>
+<text x="2664" y="580.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#212121" font-weight="bold" >U2</text>
+<rect x="2250" y="800" width="400" height="225" rx="12" fill="#5e2b97" stroke="#000" stroke-width="2" />
+<circle cx="2250" cy="825" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="831.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VCC</text>
+<circle cx="2250" cy="845" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="851.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >GND</text>
+<circle cx="2250" cy="865" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="871.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >ATX = SDA</text>
+<circle cx="2250" cy="885" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="891.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >LRX = SCL</text>
+<circle cx="2250" cy="905" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="911.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >I2C</text>
+<circle cx="2250" cy="925" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="931.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >INT</text>
+<circle cx="2250" cy="945" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="951.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >RES</text>
+<circle cx="2250" cy="965" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="971.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >BOOT</text>
+<text x="2420" y="834.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="26" text-anchor="start" fill="#fff" font-weight="bold" >ch2</text>
+<text x="2420" y="862.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="17" text-anchor="start" fill="#fff" font-weight="normal" >указательный (курсор)</text>
+<text x="2420" y="890.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#fff" font-weight="bold" >GY-BNO055</text>
+<text x="2420" y="920.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >адрес 0x28 / 0x29</text>
+<text x="2420" y="937.5" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >S0, S1 → GND (I²C)</text>
+<text x="2420" y="955.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >I2C, INT, RES, BOOT — NC</text>
+<text x="2664" y="830.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#212121" font-weight="bold" >U3</text>
+<rect x="2250" y="1050" width="400" height="225" rx="12" fill="#5e2b97" stroke="#000" stroke-width="2" />
+<circle cx="2250" cy="1075" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1081.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VCC</text>
+<circle cx="2250" cy="1095" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1101.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >GND</text>
+<circle cx="2250" cy="1115" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1121.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >ATX = SDA</text>
+<circle cx="2250" cy="1135" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1141.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >LRX = SCL</text>
+<circle cx="2250" cy="1155" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1161.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >I2C</text>
+<circle cx="2250" cy="1175" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1181.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >INT</text>
+<circle cx="2250" cy="1195" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1201.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >RES</text>
+<circle cx="2250" cy="1215" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1221.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >BOOT</text>
+<text x="2420" y="1084.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="26" text-anchor="start" fill="#fff" font-weight="bold" >ch3</text>
+<text x="2420" y="1112.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="17" text-anchor="start" fill="#fff" font-weight="normal" >средний</text>
+<text x="2420" y="1140.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#fff" font-weight="bold" >GY-BNO055</text>
+<text x="2420" y="1170.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >адрес 0x28 / 0x29</text>
+<text x="2420" y="1187.5" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >S0, S1 → GND (I²C)</text>
+<text x="2420" y="1205.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >I2C, INT, RES, BOOT — NC</text>
+<text x="2664" y="1080.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#212121" font-weight="bold" >U4</text>
+<rect x="2250" y="1300" width="400" height="225" rx="12" fill="#5e2b97" stroke="#000" stroke-width="2" />
+<circle cx="2250" cy="1325" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1331.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VCC</text>
+<circle cx="2250" cy="1345" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1351.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >GND</text>
+<circle cx="2250" cy="1365" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1371.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >ATX = SDA</text>
+<circle cx="2250" cy="1385" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1391.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >LRX = SCL</text>
+<circle cx="2250" cy="1405" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1411.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >I2C</text>
+<circle cx="2250" cy="1425" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1431.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >INT</text>
+<circle cx="2250" cy="1445" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1451.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >RES</text>
+<circle cx="2250" cy="1465" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1471.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >BOOT</text>
+<text x="2420" y="1334.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="26" text-anchor="start" fill="#fff" font-weight="bold" >ch4</text>
+<text x="2420" y="1362.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="17" text-anchor="start" fill="#fff" font-weight="normal" >безымянный</text>
+<text x="2420" y="1390.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#fff" font-weight="bold" >GY-BNO055</text>
+<text x="2420" y="1420.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >адрес 0x28 / 0x29</text>
+<text x="2420" y="1437.5" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >S0, S1 → GND (I²C)</text>
+<text x="2420" y="1455.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >I2C, INT, RES, BOOT — NC</text>
+<text x="2664" y="1330.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#212121" font-weight="bold" >U5</text>
+<rect x="2250" y="1550" width="400" height="225" rx="12" fill="#5e2b97" stroke="#000" stroke-width="2" />
+<circle cx="2250" cy="1575" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1581.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VCC</text>
+<circle cx="2250" cy="1595" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1601.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >GND</text>
+<circle cx="2250" cy="1615" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1621.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >ATX = SDA</text>
+<circle cx="2250" cy="1635" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1641.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >LRX = SCL</text>
+<circle cx="2250" cy="1655" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1661.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >I2C</text>
+<circle cx="2250" cy="1675" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1681.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >INT</text>
+<circle cx="2250" cy="1695" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1701.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >RES</text>
+<circle cx="2250" cy="1715" r="8" fill="#cfcfcf" stroke="#5d4a00" stroke-width="2"/>
+<text x="2266" y="1721.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#bdbdbd" font-weight="normal" >BOOT</text>
+<text x="2420" y="1584.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="26" text-anchor="start" fill="#fff" font-weight="bold" >ch5</text>
+<text x="2420" y="1612.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="17" text-anchor="start" fill="#fff" font-weight="normal" >мизинец</text>
+<text x="2420" y="1640.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" text-anchor="start" fill="#fff" font-weight="bold" >GY-BNO055</text>
+<text x="2420" y="1670.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >адрес 0x28 / 0x29</text>
+<text x="2420" y="1687.5" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >S0, S1 → GND (I²C)</text>
+<text x="2420" y="1705.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#e8e8ff" font-weight="normal" >I2C, INT, RES, BOOT — NC</text>
+<text x="2664" y="1580.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#212121" font-weight="bold" >U6</text>
+<rect x="1560" y="215" width="230" height="1660" rx="10" fill="#e8f1e4" stroke="#5b8c4a" stroke-width="3" stroke-dasharray="12 6"/>
+<text x="1675.0" y="163.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#212121" font-weight="bold" >P1 — плата распределения</text>
+<text x="1675.0" y="187.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#555" font-weight="normal" >(макетка / пластина на кисти)</text>
+<polyline points="1640,270 1640,1820" fill="none" stroke="#e53935" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1690,240 1690,1860" fill="none" stroke="#212121" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1632" y="1500.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#e53935" font-weight="bold" transform="rotate(-90 1632 1500)">шина 3V3</text>
+<text x="1716" y="1500.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#212121" font-weight="bold" transform="rotate(-90 1716 1500)">шина GND</text>
+<polyline points="1160,440 1500,440 1500,365 1790,365" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,480 1480,480 1480,385 1790,385" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,480 1480,480 1480,385 1790,385" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1640,325 1790,325" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="325" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="1690,345 1790,345" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="345" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<rect x="1784" y="311" width="30" height="88" rx="3" fill="#333" stroke="#000" stroke-width="1.5" />
+<circle cx="1799" cy="325" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="345" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="365" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="385" r="5" fill="#d4af37"/>
+<text x="1824" y="307.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#212121" font-weight="bold" >J0</text>
+<polyline points="1814,325 2250,325" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,345 2250,345" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,365 2250,365" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,385 2250,385" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,385 2250,385" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2020" y="425.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#666" font-weight="normal" >кабель 4 пр., 15–20 см</text>
+<polyline points="1160,520 1456,520 1456,615 1790,615" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,560 1436,560 1436,635 1790,635" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,560 1436,560 1436,635 1790,635" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1640,575 1790,575" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="575" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="1690,595 1790,595" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="595" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<rect x="1784" y="561" width="30" height="88" rx="3" fill="#333" stroke="#000" stroke-width="1.5" />
+<circle cx="1799" cy="575" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="595" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="615" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="635" r="5" fill="#d4af37"/>
+<text x="1824" y="557.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#212121" font-weight="bold" >J1</text>
+<polyline points="1814,575 2250,575" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,595 2250,595" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,615 2250,615" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,635 2250,635" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,635 2250,635" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2020" y="675.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#666" font-weight="normal" >кабель 4 пр., 15–20 см</text>
+<polyline points="1160,600 1412,600 1412,865 1790,865" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,640 1392,640 1392,885 1790,885" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,640 1392,640 1392,885 1790,885" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1640,825 1790,825" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="825" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="1690,845 1790,845" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="845" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<rect x="1784" y="811" width="30" height="88" rx="3" fill="#333" stroke="#000" stroke-width="1.5" />
+<circle cx="1799" cy="825" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="845" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="865" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="885" r="5" fill="#d4af37"/>
+<text x="1824" y="807.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#212121" font-weight="bold" >J2</text>
+<polyline points="1814,825 2250,825" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,845 2250,845" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,865 2250,865" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,885 2250,885" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,885 2250,885" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2020" y="925.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#666" font-weight="normal" >кабель 4 пр., 15–20 см</text>
+<polyline points="1160,680 1368,680 1368,1115 1790,1115" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,720 1348,720 1348,1135 1790,1135" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,720 1348,720 1348,1135 1790,1135" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1640,1075 1790,1075" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="1075" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="1690,1095 1790,1095" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="1095" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<rect x="1784" y="1061" width="30" height="88" rx="3" fill="#333" stroke="#000" stroke-width="1.5" />
+<circle cx="1799" cy="1075" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1095" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1115" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1135" r="5" fill="#d4af37"/>
+<text x="1824" y="1057.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#212121" font-weight="bold" >J3</text>
+<polyline points="1814,1075 2250,1075" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1095 2250,1095" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1115 2250,1115" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1135 2250,1135" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1135 2250,1135" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2020" y="1175.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#666" font-weight="normal" >кабель 4 пр., 15–20 см</text>
+<polyline points="1160,760 1324,760 1324,1365 1790,1365" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,800 1304,800 1304,1385 1790,1385" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,800 1304,800 1304,1385 1790,1385" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1640,1325 1790,1325" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="1325" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="1690,1345 1790,1345" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="1345" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<rect x="1784" y="1311" width="30" height="88" rx="3" fill="#333" stroke="#000" stroke-width="1.5" />
+<circle cx="1799" cy="1325" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1345" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1365" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1385" r="5" fill="#d4af37"/>
+<text x="1824" y="1307.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#212121" font-weight="bold" >J4</text>
+<polyline points="1814,1325 2250,1325" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1345 2250,1345" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1365 2250,1365" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1385 2250,1385" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1385 2250,1385" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2020" y="1425.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#666" font-weight="normal" >кабель 4 пр., 15–20 см</text>
+<polyline points="1160,840 1280,840 1280,1615 1790,1615" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,880 1260,880 1260,1635 1790,1635" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1160,880 1260,880 1260,1635 1790,1635" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1640,1575 1790,1575" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="1575" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="1690,1595 1790,1595" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="1595" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<rect x="1784" y="1561" width="30" height="88" rx="3" fill="#333" stroke="#000" stroke-width="1.5" />
+<circle cx="1799" cy="1575" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1595" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1615" r="5" fill="#d4af37"/>
+<circle cx="1799" cy="1635" r="5" fill="#d4af37"/>
+<text x="1824" y="1557.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#212121" font-weight="bold" >J5</text>
+<polyline points="1814,1575 2250,1575" fill="none" stroke="#e53935" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1595 2250,1595" fill="none" stroke="#212121" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1615 2250,1615" fill="none" stroke="#1e88e5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1635 2250,1635" fill="none" stroke="#7a5a00" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1814,1635 2250,1635" fill="none" stroke="#f4b400" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2020" y="1675.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#666" font-weight="normal" >кабель 4 пр., 15–20 см</text>
+<polyline points="540,410 760,410 760,520 900,520" fill="none" stroke="#1e88e5" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="300,530 270,530 270,840 800,840 800,560 900,560" fill="none" stroke="#7a5a00" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="300,530 270,530 270,840 800,840 800,560 900,560" fill="none" stroke="#f4b400" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="620" y="470.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#1e88e5" font-weight="bold" >GPIO5 = SDA</text>
+<text x="560" y="868.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#7a5a00" font-weight="bold" >GPIO4 = SCL</text>
+<polyline points="900,440 860,440 860,270 1640,270" fill="none" stroke="#e53935" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="270" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="900,480 840,480 840,240 1690,240" fill="none" stroke="#212121" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="240" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<polyline points="300,490 240,490 240,1820 1640,1820" fill="none" stroke="#e53935" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1640" cy="1820" r="7" fill="#e53935" stroke="#000" stroke-width="1.5"/>
+<polyline points="300,450 210,450 210,1860 1690,1860" fill="none" stroke="#212121" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1690" cy="1860" r="7" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<text x="250" y="1808.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#e53935" font-weight="normal" >3V3 со стабилизатора ESP (датчики + TCA &lt; 100 мА)</text>
+<text x="250" y="1890.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#000" font-weight="normal" >общий GND</text>
+<rect x="1000" y="1970" width="330" height="150" rx="10" fill="#1565c0" stroke="#000" stroke-width="2" />
+<text x="1165.0" y="2035.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="#fff" font-weight="bold" >MT3608</text>
+<text x="1165.0" y="2060.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#e3f2fd" font-weight="normal" >повышающий DC-DC</text>
+<text x="1165.0" y="2082.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#ffeb3b" font-weight="bold" >выставить 5,0–5,1 В!</text>
+<text x="1165.0" y="2150.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#212121" font-weight="bold" >A3 — MT3608</text>
+<circle cx="1000" cy="2010" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1016" y="2016.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VOUT−</text>
+<circle cx="1000" cy="2080" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1016" y="2086.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >VOUT+</text>
+<circle cx="1330" cy="2010" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1314" y="2016.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#fff" font-weight="normal" >VIN+</text>
+<circle cx="1330" cy="2080" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1314" y="2086.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#fff" font-weight="normal" >VIN−</text>
+<rect x="1560" y="1970" width="340" height="150" rx="10" fill="#0d47a1" stroke="#000" stroke-width="2" />
+<text x="1730.0" y="2035.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="#fff" font-weight="bold" >TP4056 Type-C</text>
+<text x="1730.0" y="2060.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#e3f2fd" font-weight="normal" >с защитой DW01 + 8205A</text>
+<rect x="1690.0" y="2102" width="80" height="34" rx="8" fill="#b0b0b0" stroke="#555" stroke-width="2" />
+<text x="1730.0" y="2160.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333" font-weight="normal" >USB-C: только зарядка</text>
+<text x="1730.0" y="2185.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#212121" font-weight="bold" >A4 — TP4056</text>
+<circle cx="1560" cy="2010" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1576" y="2016.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >OUT+</text>
+<circle cx="1560" cy="2080" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1576" y="2086.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#fff" font-weight="normal" >OUT−</text>
+<circle cx="1900" cy="2010" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1884" y="2016.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#fff" font-weight="normal" >B+</text>
+<circle cx="1900" cy="2080" r="8" fill="#d4af37" stroke="#5d4a00" stroke-width="2"/>
+<text x="1884" y="2086.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#fff" font-weight="normal" >B−</text>
+<rect x="2060" y="1960" width="420" height="170" rx="10" fill="#d9d9d9" stroke="#777" stroke-width="2" />
+<rect x="2400" y="1960" width="80" height="170" rx="10" fill="#f2c94c" stroke="#777" stroke-width="2" />
+<text x="2230" y="2040.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#444" font-weight="bold" >Li-Pol 3,7 В</text>
+<text x="2230" y="2070.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#555" font-weight="normal" >1000–1300 мА·ч, с защитой</text>
+<text x="2270" y="2165.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#212121" font-weight="bold" >GB1 — аккумулятор</text>
+<polyline points="1900,2010 2060,2010" fill="none" stroke="#8e0000" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1900,2080 2060,2080" fill="none" stroke="#212121" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2070" y="2002.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="22" text-anchor="start" fill="#212121" font-weight="bold" >+</text>
+<text x="2070" y="2108.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="22" text-anchor="start" fill="#212121" font-weight="bold" >−</text>
+<polyline points="1560,2010 1490,2010" fill="none" stroke="#8e0000" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1410,2010 1330,2010" fill="none" stroke="#8e0000" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1410" cy="2010" r="7" fill="#fff" stroke="#000" stroke-width="3"/>
+<circle cx="1490" cy="2010" r="7" fill="#fff" stroke="#000" stroke-width="3"/>
+<line x1="1416" y1="2006" x2="1486" y2="1976" stroke="#000" stroke-width="4"/>
+<text x="1450.0" y="1962.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#212121" font-weight="bold" >SW1 тумблер</text>
+<polyline points="1560,2080 1330,2080" fill="none" stroke="#212121" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1445" y="2110.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#000" font-weight="normal" >OUT− = GND системы (не B−!)</text>
+<polyline points="1000,2010 960,2010 960,1860" fill="none" stroke="#212121" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="960" cy="1860" r="8" fill="#212121" stroke="#000" stroke-width="1.5"/>
+<polyline points="1000,2080 740,2080" fill="none" stroke="#fb8c00" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="660,2080 150,2080 150,410 300,410" fill="none" stroke="#fb8c00" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="730,2058 730,2102 688,2080" fill="#333"/>
+<line x1="686" y1="2056" x2="686" y2="2104" stroke="#333" stroke-width="6"/>
+<line x1="660" y1="2080" x2="740" y2="2080" stroke="#333" stroke-width="3"/>
+<text x="700" y="2044.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#212121" font-weight="bold" >D1 1N5819 (Шоттки)</text>
+<text x="700" y="2130.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#555" font-weight="normal" >анод → MT3608, катод → 5V ESP</text>
+<text x="170" y="700.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#fb8c00" font-weight="bold" >5V</text>
+<text x="60" y="2185.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#333" font-weight="normal" >1. Когда USB-C ESP подключён к ноутбуку, SW1 выключен: D1 защищает MT3608, но не порт ноутбука.</text>
+<text x="60" y="2215.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#333" font-weight="normal" >2. MT3608 настроить на 5,0–5,1 В до подключения к ESP. Нагрузку брать только с OUT± TP4056, B− — только к АКБ.</text>
+<text x="60" y="2245.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#333" font-weight="normal" >3. TCA9548A: A0–A2 и RST не подключены (подтяжки на модуле), адрес 0x70. Каналы по ТЗ (НФТ-2): 0 ладонь, 1–5 пальцы.</text>
+<text x="60" y="2275.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="18" text-anchor="start" fill="#333" font-weight="normal" >4. Пины TCA9548A сгруппированы условно (на модуле два ряда по 12), подписи как на плате. NC — не подключать.</text>
+<text x="2740" y="2310.0" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="15" text-anchor="end" fill="#888" font-weight="normal" >AirGlove · P3319 · схема v2 по реальным модулям · tools/schema/draw_schema.py</text>
+</svg>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48.691px"
+	 height="81.891px" viewBox="0 0 48.691 81.891" enable-background="new 0 0 48.691 81.891" xml:space="preserve">
+<g id="pcb">
+	<g id="copper1">
+		<g id="copper0">
+			<circle id="connector0pin" fill="none" stroke="#FFCC00" stroke-miterlimit="10" cx="4.813" cy="8.466" r="2.126"/>
+			<circle id="connector1pin" fill="none" stroke="#FFCC00" stroke-miterlimit="10" cx="43.93" cy="8.466" r="2.126"/>
+			<circle id="connector2pin" fill="none" stroke="#FFCC00" stroke-miterlimit="10" cx="13.722" cy="72.246" r="2.126"/>
+			<circle id="connector3pin" fill="none" stroke="#FFCC00" stroke-miterlimit="10" cx="34.981" cy="72.246" r="2.126"/>
+			<circle id="connector4pin" fill="none" stroke="#FFCC00" stroke-miterlimit="10" cx="4.804" cy="72.246" r="2.126"/>
+			<circle id="connector5pin" fill="none" stroke="#FFCC00" stroke-miterlimit="10" cx="43.92" cy="72.246" r="2.126"/>
+			<g stroke="none">
+				<path fill="#FFCC00" d="M1.624,5.274v6.378h6.378V5.274H1.624z M4.814,9.887C4.04,9.887,3.4,9.252,3.4,8.472
+					c0-0.783,0.636-1.42,1.414-1.42c0.782,0,1.42,0.639,1.42,1.42C6.234,9.25,5.598,9.887,4.814,9.887z"/>
+				<path fill="#FFCC00" d="M40.741,5.277v6.378h6.379V5.277H40.741z M43.924,9.887c-0.78,0-1.414-0.636-1.414-1.415
+					c0-0.783,0.634-1.42,1.414-1.42c0.782,0,1.42,0.639,1.42,1.42C45.344,9.25,44.708,9.887,43.924,9.887z"/>
+				<path fill="#FFCC00" d="M10.533,69.057v6.381h6.378v-6.381H10.533z M13.723,73.662c-0.772,0-1.417-0.636-1.417-1.414
+					c0-0.783,0.635-1.42,1.417-1.42c0.78,0,1.417,0.637,1.417,1.42C15.14,73.028,14.506,73.662,13.723,73.662z"/>
+				<path fill="#FFCC00" d="M31.792,69.055v6.383h6.378v-6.383H31.792z M34.983,73.662c-0.772,0-1.417-0.636-1.417-1.416
+					c0-0.783,0.638-1.418,1.417-1.418c0.782,0,1.417,0.635,1.417,1.418C36.4,73.028,35.765,73.662,34.983,73.662z"/>
+				<path fill="#FFCC00" d="M1.615,69.057v6.381h6.378v-6.381H1.615z M4.805,73.662c-0.773,0-1.415-0.636-1.415-1.416
+					c0-0.783,0.633-1.418,1.415-1.418c0.779,0,1.42,0.635,1.42,1.418C6.225,73.028,5.59,73.662,4.805,73.662z"/>
+				<path fill="#FFCC00" d="M40.73,69.055v6.383h6.378v-6.383H40.73z M43.918,73.662c-0.773,0-1.417-0.636-1.417-1.416
+					c0-0.783,0.637-1.418,1.417-1.418c0.782,0,1.417,0.635,1.417,1.418C45.335,73.028,44.7,73.662,43.918,73.662z"/>
+			</g>
+		</g>
+	</g>
+	<g id="silkscreen">
+		<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M13.548,3.081H0.267v78.521h6.378V78.2
+			c0-0.781,0.638-1.416,1.418-1.416h32.601c0.779,0,1.417,0.635,1.417,1.416v3.401h6.379V3.081H34.747"/>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 2.4001 12.2156)" font-family="'DroidSansMono'" font-size="8">-</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 40.8025 11.6248)" font-family="'DroidSansMono'" font-size="8">+</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 2.8259 55.8264)" font-family="'DroidSans'" font-size="5">OUT-</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 42.4744 54.8245)" font-family="'DroidSans'" font-size="5">OUT+</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 27.0447 69.0569)" font-family="'DroidSans'" font-size="5">B+</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 18.2673 69.0569)" font-family="'DroidSans'" font-size="5">B-</text>
+		
+			<rect x="13.546" y="0.289" fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="21.201" height="15.913"/>
+	</g>
+</g>
+</svg>

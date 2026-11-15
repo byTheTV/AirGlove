@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="TP4056_protection_TypeC" fritzingVersion="0.5.2b.02.18.4756">
+ <version>4</version>
+ <date>03 Feb 2022</date>
+ <author>arnab.blue</author>
+ <label>CHRG</label>
+ <description>
+	Li-Po Battery Charging module With Battery Protection.
+	
+	This TP4056 1A Li-Ion Battery Charging Board Type C with Current Protection is a tiny module, 
+	perfect for charging single cell 3.7V 1 Ah or higher lithium-ion (Li-Ion) cells such as 16550s that don’t have their own protection circuit. 
+	Based on the TP4056 charger IC and DW01 battery protection IC this module will offer 1A charge current then cut off when finished.
+
+	Furthermore, when the battery voltage drops below 2.4V the protection IC will switch the load off to protect the cell 
+	from running at too low of a voltage – and also protects against over-voltage and reverse polarity connection 
+	(it will usually destroy itself instead of the battery) however please check you have it connected correctly the first time.
+
+	It is a special design for a single lithium battery charging. 
+	TP4056 Other features include the current monitor, under-voltage lockout, automatic recharge, 
+	and two status pin to indicate charge termination and the presence of an input voltage.
+	
+	Input interface: Type C
+	Current Protection: Yes
+	Charging mode: Linear charging.
+	Current: 1A adjustable.
+	Charge precision: 1.5%.
+	Input voltage: 4.5V-5.5V.
+	Full charge voltage: 4.2V
+	Work temperature- -10 to +85
+	Inversed polarity- NO.
+	Led indicator- red is charging, blue is full charged.
+	
+	Using the module:
+	1. Connect Type C cable for power, or 5V DC to pads marked IN+ and IN- on the left-hand side of the module
+	2. Connect cell to charge to B+/B- pads on the right-hand side of the module.
+	3. A load (something for the battery to power) can be connected to the OUT+/OUT- pads on the right-hand side
+	4. Important! Disconnect load when charging
+	5. The red LED indicates charging in progress, the green LED indicates charging has finished.
+	6. Never charge your battery at a rate greater than 1C.
+	
+	NOTE:
+	1. Ampere meter can only be connected to a 5v input end of the module.
+	2. It is better than the charging current is 37% of the battery capacity. 
+	   If you charge the battery of 1000mAh, a current of 400mAh is enough.
+	3. The connection wire should not be too thick.
+	4. Make sure the connect point is good.
+	5. If the input voltage is too high, like 5.2v, the current will be less than 1000mA, it is normal. 
+	   It is protection function, auto-subtract the charging current to avoid burn damage to the chip.
+	6. NO Reverse polarity.
+
+
+ </description>
+ <title>TP4056 w/ Protection</title>
+ 
+ <tags>
+  <tag>charge</tag>
+  <tag>protection</tag>
+  <tag>module</tag>
+  <tag>TP4056</tag>
+ </tags>
+ 
+ <properties>
+  <property name="family">Charger</property>
+  <property name="variant">Type-C</property>
+  <property name="Supply Current">1Amp</property>
+  <property name="layer"></property>
+  <property name="part number">TC4056</property>
+  <property name="Voltage">4.5-5.5V</property>
+ </properties>
+ <views>
+  <breadboardView>
+   <layers image="breadboard/TP4056_protection_TypeC_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/TP4056_protection_TypeC_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/TP4056_protection_TypeC_pcb.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+  <iconView>
+   <layers image="icon/TP4056_protection_TypeC_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="IN(-)" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector0terminal" svgId="connector0pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <p layer="copper1" svgId="connector0pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="IN(+)" type="female">
+   <description>VIN</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector1terminal" svgId="connector1pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <p layer="copper1" svgId="connector1pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" name="BAT(-)" type="female">
+   <description>V-</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector2terminal" svgId="connector2pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+     <p layer="copper1" svgId="connector2pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector3" name="BAT(+)" type="female">
+   <description>V+</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector3terminal" svgId="connector3pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+     <p layer="copper1" svgId="connector3pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  
+  <connector id="connector4" name="OUT(-)" type="female">
+   <description>GND</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector4terminal" svgId="connector4pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pin"/>
+     <p layer="copper1" svgId="connector4pin"/>
+    </pcbView>
+   </views>
+  </connector>
+  
+  <connector id="connector5" name="OUT(+)" type="female">
+   <description>VCC</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" terminalId="connector5terminal" svgId="connector5pin"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pin"/>
+     <p layer="copper1" svgId="connector5pin"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ 
+ <buses>
+  <bus id="gnd">
+   <nodeMember connectorId="connector4"/>
+   <nodeMember connectorId="connector0"/>
+  </bus>
+  <bus id="out">
+   <nodeMember connectorId="connector5"/>
+   <nodeMember connectorId="connector3"/>
+  </bus>
+ </buses>
+
+</module>
