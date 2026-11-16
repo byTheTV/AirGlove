@@ -49,3 +49,6 @@ python tools/fritzing/export_images.py "C:/путь/к/Fritzing.exe"
 - [P1 — маленькая плата питания 3V3/GND: как собрать](docs/p1_board_guide.md)
 - [Подключение GY-BNO055 вместо Adafruit BNO055](docs/bno055_module.md)
 - [Заметки по сборке: тест на столе, земля, пластина, крепление к перчатке](docs/assembly_notes.md)
+- [3D-модель перчатки: какую перчатку купить, что печатать, как крепить](docs/glove_model.md)
+  (три способа подключения — [сравнение](docs/model/variants_comparison.png), STL в `docs/model/<режим>/stl`,
+  исходники OpenSCAD в `tools/model/`)
