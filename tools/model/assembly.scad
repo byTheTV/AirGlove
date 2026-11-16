@@ -1,13 +1,16 @@
 // =====================================================================
 // AirGlove — сборка для картинок: правая рука, перчатка без пальцев,
-// под на тыле кисти, 5 держателей датчиков, коробка питания на браслете,
-// кабели с запасом-петлями над суставами.
+// под на тыле кисти, 5 держателей датчиков НА КОНЧИКАХ пальцев (ногтевые фаланги),
+// коробка питания на браслете, кабели с запасом-петлями над суставами DIP, PIP и MCP.
 //
 // Только для визуализации (печатаются отдельные файлы pod / finger_mount / wrist_box).
 //
 //   view = "assembly"  — рука в сборе (по умолчанию)
-//   view = "closeup"   — держатель на пальце крупно (крышка разрезана по оси)
+//   view = "closeup"   — держатель на кончике пальца крупно (крышка разрезана по оси);
+//                        крепление — как задано tip_style (лента или напалок из TPU)
 //   view = "wrist_exploded" — коробка питания: модули, гнёзда, аккумулятор, крышка поднята
+//   view = "collide"   — пересечение держателей пальцев ci и cj (пусто — не касаются)
+//                        с зазором gap; spread — насколько разведены пальцы
 //   explode = true     — разнесённый вид пода (основание, платы, палуба, крышка)
 // Способ подключения задаётся так: -D 'conn_mode="dupont_bent"' (см. common.scad).
 //
@@ -22,6 +25,9 @@ use <wrist_box.scad>
 
 view    = "assembly";
 explode = false;
+spread  = 1.0;      // 1 — пальцы разведены (как на картинках), 0 — сведены вместе
+ci = 0; cj = 1;     // view = "collide": какие держатели проверять (индексы в fingers)
+gap = 0;            // view = "collide": требуемый зазор между держателями, мм
 $fn = 28;
 
 // ---------- Цвета ----------
@@ -48,16 +54,19 @@ function m4(R, P) = [[R[0][0], R[0][1], R[0][2], P[0]],
 // ---------- Кисть ----------
 // Палец: [имя, основание (сустав MCP), начальный поворот, длины фаланг,
 //         радиус, сгибы суставов (°), фаланга с датчиком, радиус седла держателя,
-//         центр держателя от начала фаланги (мм)]
-// Держатели на ОСНОВНЫХ фалангах «лесенкой»: указательный и безымянный ближе к
-// костяшкам, средний и мизинец дальше на ~10 мм; большой — на ногтевой фаланге.
+//         длина ногтевой фаланги для держателя (finger_dl / pinky_dl / thumb_dl)]
+// Все пять держателей — на НОГТЕВЫХ фалангах, задний торец в 1 мм от сустава DIP
+// (у большого — от межфалангового сустава). Ногтевая фаланга модели — капсула длиной L
+// от сустава плюс скруглённый кончик 0,85·R: от сустава до кончика ≈ L + 0,85·R.
+// Поворот пальцев: разведены (spread = 1) … сведены (spread = 0).
+function spr_a(a1, a0) = rz(a0 + spread*(a1 - a0));
 fingers = [
-    ["index",  [-30, 86, -1], rz(22),  [44, 25, 20], 9.6, [10, 22, 10], 1, 9.5, 14.5],
-    ["middle", [ -8, 90, -1], rz(4),   [47, 28, 22], 9.7, [12, 24, 10], 1, 9.5, 30.0],
-    ["ring",   [ 14, 87, -1], rz(-14), [44, 26, 21], 9.4, [14, 26, 12], 1, 9.5, 14.5],
-    ["pinky",  [ 36, 78, -2], rz(-36), [37, 20, 18], 8.5, [16, 28, 12], 1, 8.5, 22.0],
+    ["index",  [-30, 86, -1], spr_a(22, -4),  [44, 25, 16.0], 9.6, [10, 22, 10], 3, 8.0, 22],
+    ["middle", [ -8, 90, -1], spr_a(4, 0),    [47, 28, 17.5], 9.7, [12, 24, 10], 3, 8.0, 22],
+    ["ring",   [ 14, 87, -1], spr_a(-14, 4),  [44, 26, 16.5], 9.4, [14, 26, 12], 3, 8.0, 22],
+    ["pinky",  [ 36, 78, -2], spr_a(-36, 9),  [37, 20, 12.0], 8.5, [16, 28, 12], 3, 7.0, 18],
     // большой: пястная кость, основная и ногтевая фаланги; датчик на ногтевой
-    ["thumb",  [-28, 24, -8], rz(42)*rx(-12)*ry(-55), [44, 32, 30], 11.4, [8, 14, 12], 3, 10, 15.0]
+    ["thumb",  [-28, 24, -8], rz(42)*rx(-12)*ry(-55), [44, 32, 17.5], 11.4, [8, 14, 12], 3, 9.0, 25]
 ];
 
 function seg_r(f, i) = f[4]*(1 - 0.06*i);                  // радиус фаланги i (1..3)
@@ -66,8 +75,8 @@ function fP(f, i) = i == 0 ? f[1] : fP(f, i - 1) + fR(f, i)*[0, f[3][i - 1], 0];
 // кадр держателя; держатель опущен, если палец тоньше седла (седло-призма)
 function mR(f) = fR(f, f[6]);
 function m_drop(f) = max(0, (f[7] + 0.3) - seg_r(f, f[6]))*sqrt(2);
-// центр платы вдоль фаланги: не ближе mount_back() к суставу и не дальше конца фаланги
-function m_along(f) = min(f[3][f[6] - 1] - mount_front() - 0.5, max(f[8], mount_back() + 1));
+// центр платы вдоль ногтевой фаланги: задний торец в dip_gap от сустава DIP
+function m_along(f) = mount_back() + mount_dip_gap();
 function mC(f) = fP(f, f[6] - 1) + mR(f)*[0, m_along(f), 0];   // точка на оси пальца
 function mP(f) = mC(f) + mR(f)*[0, 0, -m_drop(f)];
 function mW(f, p) = mP(f) + mR(f)*p;
@@ -158,8 +167,8 @@ module pod_on_hand() {
 }
 
 // ---------- Держатели на пальцах ----------
-module mount_unit(r, cut = false, wires = true, n = 0) {
-    mount_base(r);
+module mount_unit(r, dl, cut = false, wires = true, n = 0) {
+    mount_base(r, dl);
     mount_board(r, wires, 2);
     mount_hardware(r, true);
     if (cut) intersection() { mount_cover(r, n); translate([0, -60, -1]) cube([100, 120, 100]); }
@@ -167,18 +176,21 @@ module mount_unit(r, cut = false, wires = true, n = 0) {
 }
 function f_num(f) = f[0] == "thumb" ? 1 : f[0] == "index" ? 2 : f[0] == "middle" ? 3 : f[0] == "ring" ? 4 : 5;
 
+// Кольца-фиксаторы с клипсами: [сегмент, доля длины]. Пальцы — на средней и основной
+// фалангах (между петлями над DIP, PIP и MCP), большой — на основной фаланге.
+function clip_at(f) = f[0] == "thumb" ? [[2, 0.70]] : [[2, 0.50], [1, 0.62]];
+function clip_P(f, c) = fP(f, c[0] - 1) + fR(f, c[0])*[0, f[3][c[0] - 1]*c[1], 0];
+
+// крепление на палец: кольцо ленты 10 мм (у сустава DIP) или напалок из TPU
+module tip_fix(r) { if (mount_tip_style() == "thimble") finger_thimble(r); else strap_ring(r); }
+
 module mounts() {
     for (f = fingers) {
-        multmatrix(m4(mR(f), mP(f))) mount_unit(f[7], false, false, f_num(f));
-        // кольцо из ленты-липучки (идёт через канал под платой, застёгивается снизу)
-        rho = seg_r(f, f[6]);
-        multmatrix(m4(mR(f), mC(f) + mR(f)*[0, -0.8, 0]))
-            color(c_ring) rotate([90, 0, 0]) difference() {
-                cylinder(r = rho + 1.8, h = 12, center = true);
-                cylinder(r = rho, h = 13, center = true);
-            }
-        // кольцо-фиксатор 6 мм с клипсой для кабеля за держателем (к кисти)
-        multmatrix(m4(mR(f), mC(f) + mR(f)*[0, -mount_back() - 7, 0])) cable_clip(rho);
+        multmatrix(m4(mR(f), mP(f))) {
+            mount_unit(f[7], f[8], false, false, f_num(f));
+            tip_fix(f[7]);
+        }
+        for (c = clip_at(f)) multmatrix(m4(fR(f, c[0]), clip_P(f, c))) cable_clip(seg_r(f, c[0]));
     }
 }
 
@@ -201,6 +213,12 @@ function slot_of(name) =
     name == "ring"   ? pod_slots()[2] :
     name == "pinky"  ? pod_slots()[3] : pod_slots()[4];
 
+// кабель по тыльной стороне пальца: через клипсу (3 точки вдоль оси клипсы)
+function clip_run(f, c) = let(h = seg_r(f, c[0]) + 4.5)
+    [for (d = [3, 0, -3]) clip_P(f, c) + fR(f, c[0])*[0, d, h]];
+// петля-запас над суставом между сегментами i и i+1
+function joint_loop(f, i, h = 7.5) = fP(f, i) + fR(f, i + 1)*[0, -1, seg_r(f, i + 1) + h];
+
 function cable_pts(f) = let(
     s   = f[6],
     r   = f[7],
@@ -213,13 +231,18 @@ function cable_pts(f) = let(
     yb  = -mount_back(),
     md  = m_drop(f)
 ) concat(
-    // выход из окна колпака → вниз за держателем → на палец
-    [mW(f, e + [0, 2, 0]), mW(f, e), mW(f, [e[0]*0.6, yb - 3.5, max(rho + 4.5 + md, e[2] - 3)]), mW(f, [0, yb - 7, rho + 4.5 + md])],
+    // выход из окна в заднем торце (стяжка) → вниз к пальцу
+    [mW(f, e + [0, 2, 0]), mW(f, e), mW(f, [e[0]*0.5, yb - 2.5, max(rho + 5 + md, e[2] - 3)])],
     f[0] == "thumb"
-      ? [fP(f, 1) + fR(f, 2)*[0, f[3][1]*0.5, rho + 3],
-         fP(f, 1) + fR(f, 1)*[0, -2, rho + 8]]                            // петля-запас над MCP большого
-      : [fP(f, 0) + fR(f, 0)*[0, -2, rho + 8.5],                           // петля-запас над костяшкой
-         [(f[1][0] + podW(out)[0])/2, (f[1][1] + podW(out)[1])/2 + 3, podW(out)[2] + 2]],
+      ? concat([joint_loop(f, 2)],                                      // петля над межфаланговым суставом
+               clip_run(f, clip_at(f)[0]),                              // клипса на основной фаланге
+               [fP(f, 1) + fR(f, 1)*[0, -2, seg_r(f, 2) + 8]])          // петля над MCP большого
+      : concat([joint_loop(f, 2)],                                      // петля над DIP
+               clip_run(f, clip_at(f)[0]),                              // клипса на средней фаланге
+               [joint_loop(f, 1, 8)],                                   // петля над PIP
+               clip_run(f, clip_at(f)[1]),                              // клипса на основной фаланге
+               [fP(f, 0) + fR(f, 1)*[0, -2, seg_r(f, 1) + 8.5],          // петля над костяшкой
+                [(f[1][0] + podW(out)[0])/2, (f[1][1] + podW(out)[1])/2 + 3, podW(out)[2] + 2]]),
     [podW(out), podW(inn)]
 );
 
@@ -282,26 +305,32 @@ module wrist_exploded() {
     translate([0, 0.45*wb_dims()[1], wb_dims()[2] + 10]) wrist_box_lid();   // крышка поднята и сдвинута к кисти
 }
 
-// ---------- Держатель на пальце крупно ----------
+// ---------- Держатель на кончике пальца крупно ----------
+// Ногтевая фаланга R 8 / 22 мм, сустав DIP в 1 мм за держателем, средняя фаланга R 8,6
+// с кольцом-клипсой; кабель — петлёй над DIP.
+module fingertip(r, dl, yd, mid = 30) {
+    color(c_skin) {
+        translate([0, yd, 0]) rotate([-90, 0, 0]) hull() {      // ногтевая фаланга
+            sphere(r + 0.4, $fn = 64);
+            translate([0, 0, dl - 0.9*r]) sphere(0.9*r, $fn = 64);
+        }
+        translate([0, yd - mid, 0]) rotate([-90, 0, 0]) cylinder(r = r + 0.6, h = mid, $fn = 64);   // средняя
+        translate([0, yd - mid, 0]) scale([1.05, 0.8, 1.0]) sphere(r + 1.0, $fn = 48);         // сустав PIP
+        translate([0, yd, 0]) scale([1.05, 0.8, 1.0]) sphere(r + 0.7, $fn = 48);              // сустав DIP
+    }
+}
 module closeup() {
-    f = fingers[0];
-    r = 9.5;
-    yk = -mount_back() - 16;                                    // сустав (костяшка)
-    color(c_skin) translate([0, yk, 0]) rotate([-90, 0, 0]) { cylinder(r = 9.0, h = 42 - yk, $fn = 64); translate([0, 0, 42 - yk]) sphere(9.0, $fn = 64); }
-    color(c_skin) translate([0, yk, 0]) scale([1.6, 1, 1.1]) sphere(9, $fn = 48);   // костяшка
-    translate([0, 0, -(9.8 - 9.0)*sqrt(2)]) {
-        mount_unit(r, true, true, 2);
-        e = mount_exit(r);
-        zc = 9.0 + 0.8*sqrt(2) + 1.2 + 3.3;                      // ось кабеля в клипсе
-        color(c_cable) tube(spline([e + [0, 1.5, 0], e, [e[0]*0.6, e[1] - 3.5, max(zc, e[2] - 3)], [0, e[1] - 7, zc],
-                                    [0, yk + 2, zc + 3], [0, yk - 12, zc + 6]]), 3.0);
-    }
-    translate([0, -mount_back() - 7, 0]) cable_clip(9.0);
-    color(c_ring) translate([0, -0.8, 0]) rotate([90, 0, 0]) difference() {
-        cylinder(r = 9.0 + 1.8, h = 12, center = true, $fn = 64);
-        cylinder(r = 9.0, h = 13, center = true, $fn = 64);
-        translate([-50, 0, -10]) cube([100, 100, 20]);
-    }
+    r = 8.0; dl = 22;
+    yd = -mount_back() - mount_dip_gap();                       // складка DIP
+    fingertip(r, dl, yd, 34);
+    mount_unit(r, dl, true, true, 2);
+    tip_fix(r);
+    e = mount_exit(r);
+    yc = yd - 16;                                                // кольцо с клипсой на средней фаланге
+    zc = r + 0.6 + 4.5;                                          // ось кабеля в клипсе
+    color(c_cable) tube(spline([e + [0, 1.5, 0], e, [e[0]*0.5, e[1] - 2.5, max(zc + 1, e[2] - 3)],
+                                [0, yd - 1, r + 9], [0, yc + 3, zc], [0, yc, zc], [0, yc - 3, zc], [0, yd - 34, zc + 1]]), 3.0);
+    translate([0, yc, 0]) cable_clip(r + 0.6);
 }
 
 // ---------- Раскладка на столе принтера ----------
@@ -315,13 +344,13 @@ module layout() {
     translate([-38, 45, 0]) pod_lid_print();          label("pod_lid.stl", [-38, 9, 0]);
     translate([28, 45, 0]) wrist_box_base();         label("wrist_box.stl", [28, 9, 0]);
     translate([85, 45, 0]) wrist_box_lid_print();    label("wrist_box_lid.stl", [85, 9, 0]);
-    for (i = [0:2]) translate([-120 + i*31, -20, -0.5*9.5]) color(c_mount) render() mount_base(9.5);
+    for (i = [0:2]) translate([-120 + i*31, -20, -0.4*8.0]) color(c_mount) render() mount_base(8.0);
     label("finger_mount.stl x3", [-89, -40], 3.5);
-    translate([-24, -20, -0.5*8.5]) color(c_mount) render() mount_base(8.5);
+    translate([-24, -20, -0.4*7.0]) color(c_mount) render() mount_base(7.0, 18);
     label("..._pinky.stl", [-24, -40], 3.5);
-    translate([10, -20, -0.5*10]) color(c_mount) render() mount_base(10);
+    translate([10, -20, -0.4*9.0]) color(c_mount) render() mount_base(9.0, 25);
     label("..._thumb.stl", [12, -40], 3.5);
-    for (i = [0:4]) translate([-120 + i*31, -68, -mount_board_z(9.5) - 2.3]) color(c_cover) render() mount_cover(9.5);
+    for (i = [0:4]) translate([-120 + i*31, -68, -mount_board_z(8.0) - 2.3]) color(c_cover) render() mount_cover(8.0);
     label("finger_cover.stl x5", [-58, -90], 3.5);
     for (i = [0:4]) translate([45 + i*15, -20, 0.8]) rotate([180, 0, 0]) translate([0, 0, 0]) dupont_sleeve();
     label("dupont_sleeve.stl x6", [75, -32], 3.5);
@@ -330,9 +359,20 @@ module layout() {
     translate([120, -20, 0.8]) rotate([180, 0, 0]) dupont_sleeve();
 }
 
+// ---------- Проверка столкновений держателей ----------
+// Выпуклая оболочка держателя (основание + крышка), раздутая на g со всех сторон
+module mount_hull(f, g) {
+    multmatrix(m4(mR(f), mP(f))) minkowski() {
+        hull() { mount_base(f[7], f[8]); mount_cover(f[7], 0); }
+        cube(max(g, 0.01), center = true);
+    }
+}
+module collide() { intersection() { mount_hull(fingers[ci], gap); mount_hull(fingers[cj], 0.01); } }
+
 // =====================================================================
 if (explode) pod_exploded();
 else if (view == "layout") layout();
+else if (view == "collide") collide();
 else if (view == "closeup") closeup();
 else if (view == "wrist_exploded") wrist_exploded();
 else {

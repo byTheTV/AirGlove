@@ -387,8 +387,9 @@ module p1_board(n_used = 8, ang_p = 90, ang_g = -90, lead = 3, wires = true, pin
 // отверстия в углах стороны +Y, чип сверху. Ось X датчика = +Y этой системы.
 // hdr — гребёнка штырями вверх (в режиме stubs — пеньки); dup — 4-контактный корпус
 // на VCC..LRX (в режиме stubs — 4 припаянных провода); ang — куда идут провода
-// (по умолчанию к -Y, от датчика к кисти; в режиме bent корпус лежит к -Y).
-module bno055(hdr = true, dup = true, ang = -90, lead = 3, wires = true, m = conn_mode) {
+// (по умолчанию к -Y, от датчика к кисти); bend — куда загнуты штыри в режиме bent
+// (-90 — к -Y, за край платы, как в поде; +90 — к +Y, корпус лежит над платой, как на пальце).
+module bno055(hdr = true, dup = true, ang = -90, lead = 3, wires = true, m = conn_mode, bend = -90) {
     color(c_pcb_bno) difference() {
         translate([-bno_a/2, -bno_b/2, 0]) cube([bno_a, bno_b, bno_pcb]);
         for (h = bno_holes()) translate([h[0], h[1], -1]) cylinder(d = bno_hole_d, h = 5, $fn = 20);
@@ -403,9 +404,9 @@ module bno055(hdr = true, dup = true, ang = -90, lead = 3, wires = true, m = con
         polygon([[-0.3, 0], [0.3, 0], [0.3, 5], [1.1, 5], [0, 7], [-1.1, 5], [-0.3, 5]]);
     color(c_gold) for (i = [0:bno_npins - 1])
         translate([bno_pin_x(i), bno_row_y(), bno_pcb]) cylinder(d = 1.7, h = 0.05, $fn = 12);
-    if (hdr) translate([0, bno_row_y(), 0]) header_row(bno_npins, bno_pcb, true, -90, m);
+    if (hdr) translate([0, bno_row_y(), 0]) header_row(bno_npins, bno_pcb, true, bend, m);
     if (hdr && dup) translate([bno_hous_x(), bno_row_y(), 0])
-        conn_on(4, bno_pcb, true, c_wires4, m_bent(m) ? -90 : ang, lead, false, wires, m);
+        conn_on(4, bno_pcb, true, c_wires4, m_bent(m) ? bend : ang, lead, false, wires, m);
 }
 
 // Li-Pol 603450: длинная сторона вдоль Y, выводы на стороне +Y.
