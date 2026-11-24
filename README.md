@@ -1,54 +1,48 @@
 # AirGlove
 
-### Учебный проект по дисциплине «Встроенные системы»
+**Перчатка для управления компьютером движениями кисти и пальцев.**
 
-AirGlove - беспроводная перчатка для управления компьютером при помощи движений кисти и пальцев.
+AirGlove — учебный проект по дисциплине «Встроенные системы». Пять датчиков GY-BNO055 на кончиках пальцев и один на тыльной стороне кисти передают данные на ESP32-C3 через мультиплексор TCA9548A. Цель проекта — беспроводное управление компьютером жестами. На текущем этапе для проверки электроники используется диагностическая прошивка, а движения можно посмотреть на 3D-модели кисти через USB.
+
+<img src="docs/model/soldered_stubs/assembly_persp.png" alt="3D-модель AirGlove с датчиками на кончиках пальцев" width="720">
+
+*Один из вариантов 3D-модели корпусов и креплений.*
+
+## Текущая сборка
+
+Со всех шести GY-BNO055 срезаны контактные гребёнки, провода подключены напрямую к платам датчиков. На остальных модулях гребёнки пока оставляем. Этот вариант ещё может измениться при сборке.
+
+Каждый датчик занимает отдельный канал TCA9548A. Канал CH0 отведён для кисти, CH1–CH5 — для пальцев от большого до мизинца. Питание 3,3 В и землю распределяет плата P1. Схема автономного питания включает Li-Po аккумулятор, модуль зарядки TP4056 и преобразователь MT3608.
+
+- [Таблица контактов](docs/connections.md) и [схема подключения](docs/fritzing/AirGlove_breadboard.png)
+- [Проект Fritzing](docs/fritzing/AirGlove.fzz) со встроенными деталями и [источники компонентов схемы](tools/fritzing/parts/CREDITS.md)
+- [Сборка платы P1](docs/p1_board_guide.md), [варианты разводки питания](docs/power_distribution_options.md) и [заметки по сборке](docs/assembly_notes.md)
+- [Особенности модуля GY-BNO055](docs/bno055_module.md)
+
+## Запуск диагностики и 3D-просмотрщика
+
+1. Откройте [AirGloveCheck.ino](tools/diagnostics/AirGloveCheck/AirGloveCheck.ino) в Arduino IDE. Выберите `ESP32C3 Dev Module`, включите `USB CDC On Boot`, укажите порт и загрузите скетч. Для проверки по USB выключите питание от аккумулятора.
+2. Откройте Serial Monitor на **115200 бод** и отправьте `r`. Строка `Configured: 6/6` означает, что все шесть штатных датчиков обнаружены и настроены.
+3. Закройте Serial Monitor, чтобы освободить порт. В Windows запустите из корня репозитория:
+
+   ```powershell
+   py -3.12 -m pip install pyserial
+   py -3.12 tools/diagnostics/hand_viewer.py
+   ```
+
+Просмотрщик ищет USB-порт автоматически. Чтобы указать порт вручную, добавьте `--port COM5` с номером вашего порта. Параметр `--demo` запускает пример движения без платы. [Расшифровка диагностики и калибровка 3D-модели](tools/diagnostics/README.md).
+
+## Исходники и материалы
+
+| Папка | Содержимое |
+| --- | --- |
+| [`tools/diagnostics/`](tools/diagnostics) | Скетч ESP32-C3 и 3D-просмотрщик на Python |
+| [`tools/model/`](tools/model) | Исходники OpenSCAD и скрипты экспорта 3D-моделей |
+| [`tools/fritzing/`](tools/fritzing), [`tools/schema/`](tools/schema) | Скрипты сборки и экспорта схем, детали Fritzing |
+| [`docs/`](docs) | Схемы, документация по сборке и готовые файлы моделей |
+
+[Техническое задание](docs/AirGlove_TZ.docx) · [Руководство по 3D-модели](docs/glove_model.md) · [STL для печати](docs/model) · [Сравнение вариантов подключения](docs/model/variants_comparison.png)
 
 ## Авторы
 
-- Целиков Даниил Александрович
-- Тарасов Владислав Павлович
-
-Группа: **P3319**
-
-## Компоненты
-
-- ESP32-C3 - микроконтроллер.
-- 6 × GY-BNO055 (фиолетовые китайские CJMCU-055) - датчики движения.
-- TCA9548A - мультиплексор I²C.
-- Li-Po аккумулятор, TP4056 и MT3608 - питание и зарядка.
-
-## Схема подключения
-
-![Схема подключения AirGlove (Fritzing)](docs/fritzing/AirGlove_breadboard.png)
-
-Схема сделана в Fritzing на готовых деталях сообщества под наши платы: ESP32-C3 SuperMini,
-TCA9548A, TP4056 Type-C с защитой, MT3608, Li-Pol 1300 мА·ч (авторы — в
-[tools/fritzing/parts/CREDITS.md](tools/fritzing/parts/CREDITS.md)). Своими деталями нарисованы только
-фиолетовый GY-BNO055 (готовой детали для этого клона нет) и наша плата распределения P1.
-Проект: [docs/fritzing/AirGlove.fzz](docs/fritzing/AirGlove.fzz), открывается в Fritzing через File → Open.
-Все детали встроены в файл, отдельно ставить их не нужно.
-Таблица контактов: [docs/connections.md](docs/connections.md).
-
-Как пересобрать (если править не мышкой, а в скрипте):
-
-```bash
-python tools/fritzing/build_fzz.py
-python tools/fritzing/export_images.py "C:/путь/к/Fritzing.exe"
-```
-
-Старые варианты для истории: логическая схема [docs/schema.png](docs/schema.png) (нарисована до переделки P1)
-и первая версия из Fritzing [docs/schema_v1_fritzing.png](docs/schema_v1_fritzing.png).
-
-## Материалы
-
-- [Техническое задание проекта](docs/AirGlove_TZ.docx)
-- [Схема в Fritzing](docs/fritzing/AirGlove.fzz) ([PNG](docs/fritzing/AirGlove_breadboard.png)) и [таблица контактов](docs/connections.md)
-- [Старая логическая схема](docs/schema.png) — нарисована до переделки P1, актуальна схема Fritzing
-- [Разводка питания и земли: варианты (своя плата, готовые хабы)](docs/power_distribution_options.md)
-- [P1 — маленькая плата питания 3V3/GND: как собрать](docs/p1_board_guide.md)
-- [Подключение GY-BNO055 вместо Adafruit BNO055](docs/bno055_module.md)
-- [Заметки по сборке: тест на столе, земля, пластина, крепление к перчатке](docs/assembly_notes.md)
-- [3D-модель перчатки: какую перчатку купить, что печатать, как крепить](docs/glove_model.md)
-  (три способа подключения — [сравнение](docs/model/variants_comparison.png), STL в `docs/model/<режим>/stl`,
-  исходники OpenSCAD в `tools/model/`)
+Даниил Целиков и Владислав Тарасов, группа **P3319**.
