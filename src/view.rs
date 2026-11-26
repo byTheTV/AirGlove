@@ -1,3 +1,5 @@
+mod hand;
+
 use crate::{
     VERSION,
     app::{AirGlove, Page},
@@ -10,8 +12,7 @@ use crate::{
     source::Source,
 };
 use eframe::egui::{
-    self, Color32 as C, FontData, FontDefinitions, FontFamily, Frame, Pos2, Rect, RichText, Stroke,
-    Ui, Vec2, pos2, vec2,
+    self, Color32 as C, FontData, FontDefinitions, FontFamily, Frame, RichText, Stroke, Ui, vec2,
 };
 use std::time::Instant;
 
@@ -294,24 +295,39 @@ fn monitor(app: &mut AirGlove, ctx: &egui::Context, ui: &mut Ui) {
     ui.columns(2, |columns| {
         card().show(&mut columns[0], |ui| {
             ui.label(RichText::new("Кисть").strong());
-            draw_hand(app, ui);
-            let valid = app.latest.map_or(0, |frame| frame.valid());
+            hand::draw(app, ui);
+            let valid = app.latest.map(|frame| frame.valid());
             ui.horizontal_wrapped(|ui| {
-                for (i, label) in ["Кисть", "Б", "У", "С", "Бз", "М"].iter().enumerate()
+                for (i, label) in [
+                    "Кисть",
+                    "Большой",
+                    "Указательный",
+                    "Средний",
+                    "Безымянный",
+                    "Мизинец",
+                ]
+                .into_iter()
+                .enumerate()
                 {
+                    let status = match valid {
+                        Some(mask) if mask & (1 << i) != 0 => "на связи",
+                        Some(_) => "нет сигнала",
+                        None => "ожидание",
+                    };
                     ui.label(
-                        RichText::new(*label)
-                            .color(if valid & (1 << i) != 0 { ACCENT } else { MUTED })
-                            .monospace(),
+                        RichText::new(format!("CH{i}"))
+                            .small()
+                            .monospace()
+                            .color(hand::channel_color(valid, i)),
                     )
-                    .on_hover_text(format!("Канал CH{i}"));
+                    .on_hover_text(format!("{label} · {status}"));
                 }
             });
         });
         card().show(&mut columns[1], |ui| {
             ui.label(RichText::new("Предпросмотр курсора").strong());
             let (bounds, _) = ui.allocate_exact_size(
-                vec2(ui.available_width().max(1.), 145.),
+                vec2(ui.available_width().max(1.), hand::HEIGHT),
                 egui::Sense::hover(),
             );
             let painter = ui.painter_at(bounds);
@@ -366,66 +382,6 @@ fn monitor(app: &mut AirGlove, ctx: &egui::Context, ui: &mut Ui) {
             });
         }
     });
-}
-
-fn draw_hand(app: &AirGlove, ui: &mut Ui) {
-    let (bounds, _) = ui.allocate_exact_size(
-        vec2(ui.available_width().max(1.), 145.),
-        egui::Sense::hover(),
-    );
-    let painter = ui.painter_at(bounds);
-    painter.rect_filled(bounds, 6, BACK);
-    let scale = (bounds.width() / 155.).min(1.0);
-    let center = pos2(bounds.center().x, bounds.top() + 100.);
-    let palm = Rect::from_center_size(center, vec2(64., 49.) * scale);
-    painter.rect_filled(palm, 12, RAIL);
-    painter.rect_stroke(
-        palm,
-        12,
-        Stroke::new(1.5_f32, EDGE),
-        egui::StrokeKind::Inside,
-    );
-    let fingers: [(f32, f32, f32, f32); 5] = [
-        (-27., 4., -38., -36.),
-        (-23., -22., -10., -48.),
-        (-7., -22., 0., -61.),
-        (9., -22., 5., -52.),
-        (25., -18., 13., -39.),
-    ];
-    for (i, (x, y, dx, dy)) in fingers.into_iter().enumerate() {
-        let start = center + vec2(x, y) * scale;
-        let direction = app.motion.directions[i + 1];
-        let display = match app.motion.extended[i] {
-            Some(true) => 1.,
-            Some(false) => 0.50,
-            None => 0.78,
-        };
-        let end = start
-            + (vec2(dx, dy) * display
-                + direction.map_or(Vec2::ZERO, |v| vec2(v.x as f32 * 15., -v.z as f32 * 12.)))
-                * scale;
-        let available = app
-            .latest
-            .is_some_and(|frame| frame.samples[i + 1].is_some());
-        let color = match (available, app.motion.extended[i]) {
-            (false, _) => EDGE,
-            (true, Some(true)) => ACCENT,
-            _ => MUTED,
-        };
-        let joint: Pos2 = start.lerp(end, 0.52);
-        painter.line_segment([start, end], Stroke::new(3.2_f32, color));
-        painter.circle_filled(joint, 2.5, color);
-        painter.circle_filled(end, 4., color);
-    }
-    painter.circle_filled(
-        center,
-        4.,
-        if app.latest.is_some_and(|f| f.samples[0].is_some()) {
-            ACCENT
-        } else {
-            EDGE
-        },
-    );
 }
 
 fn profile_picker(app: &mut AirGlove, ui: &mut Ui, id: &str) {
